@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>恮新工作站 - Workspace</title>
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --card-bg: #ffffff;
+            --item-bg: #fbfbfd;
+            --item-hover: #f0f0f5;
+            --accent-blue: #0071e3;
+            --accent-blue-hover: #0077ed;
+            --border-color: #e5e5ea;
+            --error-red: #ff3b30;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-top: 8px;
+        }
+
+        .container {
+            max-width: 720px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title span.badge {
+            font-size: 12px;
+            font-weight: 500;
+            background: var(--bg-color);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .item-list {
+            list-style: none;
+        }
+
+        .item {
+            background: var(--item-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item:hover {
+            background: var(--item-hover);
+            transform: scale(1.01);
+        }
+
+        .item svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: var(--text-secondary);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        /* Coming soon style */
+        .item.coming-soon {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        .item.coming-soon:hover {
+            background: var(--item-bg);
+            transform: none;
+        }
+
+        .item .tag-soon {
+            font-size: 11px;
+            font-weight: 500;
+            background: #f0f0f5;
+            color: var(--text-secondary);
+            padding: 3px 8px;
+            border-radius: 8px;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 40px 15px; }
+            .header h1 { font-size: 32px; }
+            .container { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>恮新 Workspace</h1>
+        <p>請選擇您要進入的系統專區</p>
+    </div>
+
+    <div class="container">
+
+        <!-- 客戶經營智能系統 -->
+        <div class="section-card">
+            <div class="section-title">客戶經營智能系統 <span class="badge">業務專區</span></div>
+            <ul class="item-list">
+
+                <li class="item coming-soon">
+                    <span>1-1 智能費用報帳</span>
+                    <div style="display:flex;align-items:center;gap:4px;">
+                        <span class="tag-soon">即將推出</span>
+                        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                    </div>
+                </li>
+
+                <li class="item coming-soon">
+                    <span>1-2 自動報價生成</span>
+                    <div style="display:flex;align-items:center;gap:4px;">
+                        <span class="tag-soon">即將推出</span>
+                        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                    </div>
+                </li>
+
+                <li class="item coming-soon">
+                    <span>1-3 AI 合約撰寫</span>
+                    <div style="display:flex;align-items:center;gap:4px;">
+                        <span class="tag-soon">即將推出</span>
+                        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                    </div>
+                </li>
+
+                <li class="item coming-soon">
+                    <span>1-4 智能專案查詢及追蹤</span>
+                    <div style="display:flex;align-items:center;gap:4px;">
+                        <span class="tag-soon">即將推出</span>
+                        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                    </div>
+                </li>
+
+                <li class="item coming-soon">
+                    <span>1-5 智能保固派工追蹤</span>
+                    <div style="display:flex;align-items:center;gap:4px;">
+                        <span class="tag-soon">即將推出</span>
+                        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                    </div>
+                </li>
+
+                <li class="item coming-soon">
+                    <span>1-6 關鍵市場動態應用</span>
+                    <div style="display:flex;align-items:center;gap:4px;">
+                        <span class="tag-soon">即將推出</span>
+                        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
